@@ -38,6 +38,6 @@ def PlotData(train, label1, label2):
   plt.figure(figsize=(10, 10))
   #pick k largest correlation using corrmat.nlargest
   sns.heatmap(corrmat, vmax=1.0, square=True)
-
+  sns.pairplot(train, size = 2.5)
   
   
