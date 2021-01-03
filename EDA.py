@@ -41,5 +41,10 @@ def PlotData(train, label1, label2):
   sns.heatmap(corrmat, vmax=1.0, square=True)
   sns.pairplot(train, size = 2.5)
   fig = plt.figure()
-  res = stats.probplot(train[label1], plot=plt)  
+  res = stats.probplot(train[label1], plot=plt) 
+  plt.figure(figsize=(10, 10))
+  sns.boxplot(data=train[label1])
+  
+  
+  
   
