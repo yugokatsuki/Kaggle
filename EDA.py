@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
+from scipy.stats import norm
 %matplotlib inline
 
 def GetNumericalIndex(train):
@@ -39,5 +40,6 @@ def PlotData(train, label1, label2):
   #pick k largest correlation using corrmat.nlargest
   sns.heatmap(corrmat, vmax=1.0, square=True)
   sns.pairplot(train, size = 2.5)
-  
+  fig = plt.figure()
+  res = stats.probplot(train[label1], plot=plt)  
   
