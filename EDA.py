@@ -30,11 +30,10 @@ def GetInfoOfData(train):
   print(train.isnull().sum().sort_values(ascending=False))
 
 def PlotData(train, label1, label2):
-  sns.distplot(train[label1])
+  plt.figure(figsize=(10, 10))
+  sns.distplot(train[abel1], fit=norm ).set(xlim=(0,10000))
   train.plot.scatter(x=label1 ,y=label2, xlim=(0,75000), ylim=(0,750))
   #sns.boxplot(x=label1, y=label2, data=sales_train)
-
-
 
   
   
