@@ -29,8 +29,12 @@ def GetInfoOfData(train):
   print("data null count")
   print(train.isnull().sum().sort_values(ascending=False))
 
-def PlotData(train):
-  sns.distplot(sales_train['item_price'])
+def PlotData(train, label1, label2):
+  sns.distplot(train[label1])
+  train.plot.scatter(x=label1 ,y=label2, xlim=(0,75000), ylim=(0,750))
+  #sns.boxplot(x=label1, y=label2, data=sales_train)
+
+
 
   
   
