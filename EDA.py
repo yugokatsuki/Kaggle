@@ -34,6 +34,10 @@ def PlotData(train, label1, label2):
   sns.distplot(train[abel1], fit=norm ).set(xlim=(0,10000))
   train.plot.scatter(x=label1 ,y=label2, xlim=(0,75000), ylim=(0,750))
   #sns.boxplot(x=label1, y=label2, data=sales_train)
+  corrmat = train.corr()
+  plt.figure(figsize=(10, 10))
+  #pick k largest correlation using corrmat.nlargest
+  sns.heatmap(corrmat, vmax=1.0, square=True)
 
   
   
