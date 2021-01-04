@@ -44,7 +44,9 @@ def PlotData(train, label1, label2):
   res = stats.probplot(train[label1], plot=plt) 
   plt.figure(figsize=(10, 10))
   sns.boxplot(data=train[label1])
-  
-  
-  
+    
+def ParseDateTime(train):
+  return train.apply(lambda x: datetime.strptime(x, "%d.%m.%Y"))
+
+
   
